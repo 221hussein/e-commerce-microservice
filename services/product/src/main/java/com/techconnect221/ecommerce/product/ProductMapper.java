@@ -2,6 +2,7 @@ package com.techconnect221.ecommerce.product;
 
 import com.techconnect221.ecommerce.category.Category;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,6 +32,16 @@ public class ProductMapper {
                 product.getCategory().getId(),
                 product.getCategory().getName(),
                 product.getCategory().getDescription()
+        );
+    }
+
+    public ProductPurchaseResponse toProductPurchaseRespone(Product product, double quantity) {
+        return new ProductPurchaseResponse(
+                product.getId(),
+                product.getName(),
+                product.getDescription(),
+                product.getPrice(),
+                quantity
         );
     }
 }

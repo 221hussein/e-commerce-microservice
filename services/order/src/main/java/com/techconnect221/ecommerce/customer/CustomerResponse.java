@@ -1,0 +1,9 @@
+package com.techconnect221.ecommerce.customer;
+
+public record CustomerResponse(
+        String id,
+        String firstname,
+        String lastname,
+        String email
+) {
+}
